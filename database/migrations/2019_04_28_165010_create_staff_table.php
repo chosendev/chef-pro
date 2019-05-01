@@ -8,21 +8,23 @@ class CreateStaffTable extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *0755781214 // jacky
      * @return void
      */
     public function up()
     {
         Schema::create('staff', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('staff_type_id');
+            $table->increments('id');
+            $table->unsignedInteger('staff_type_id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('phone_number');
             $table->string('address');
-            $table->string('next_of_kean_name');
-            $table->string('next_of_kean_phone_number');
+            $table->string('next_of_kin_name');
+            $table->string('next_of_kin_phone_number');
             $table->timestamps();
+
+            $table->foreign('staff_type_id')->references('id')->on('staff_types')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

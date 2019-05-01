@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOutsideCateringPackagesTable extends Migration
+class CreateUsedItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,14 @@ class CreateOutsideCateringPackagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('outside_catering_packages', function (Blueprint $table) {
+        Schema::create('used_items', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name/food_combination');
-            $table->string('price');
-            $table->string('status');
+            $table->string('quantity');
+            $table->unsignedInteger('staff_id')->index();
+            $table->date('date');
             $table->timestamps();
+
+            $table->foreign('staff_id')->references('id')->on('staff')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -29,6 +31,7 @@ class CreateOutsideCateringPackagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('outside_catering_packages');
+        Schema::dropIfExists('used_items');
     }
 }
+

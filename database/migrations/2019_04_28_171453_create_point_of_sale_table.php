@@ -15,10 +15,12 @@ class CreatePointOfSaleTable extends Migration
     {
         Schema::create('point_of_sale', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('order_id');
+            $table->string('name');
+            $table->unsignedBigInteger('order_id');
             $table->unsignedInteger('staff_id')->index();
             $table->date('date');
             $table->timestamps();
+            $table->foreign('order_id')->references('id')->on('orders')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('staff_id')->references('id')->on('staff')->onUpdate('cascade')->onDelete('cascade');
         });
     }

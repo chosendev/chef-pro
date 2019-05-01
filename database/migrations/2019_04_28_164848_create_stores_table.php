@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateVendorsTable extends Migration
+class CreateStoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,17 @@ class CreateVendorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('vendors', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('phone_number');
+        Schema::create('stores', function (Blueprint $table) {
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('item_id')->index();
-            $table->string('location');
+            $table->string('quantity_stocked');
+            $table->string('status');
+            $table->unsignedInteger('vendor_id')->index();
+            $table->date('date');
             $table->timestamps();
 
             $table->foreign('item_id')->references('id')->on('items')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('vendor_id')->references('id')->on('vendors')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -32,6 +34,6 @@ class CreateVendorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vendors');
+        Schema::dropIfExists('stores');
     }
 }

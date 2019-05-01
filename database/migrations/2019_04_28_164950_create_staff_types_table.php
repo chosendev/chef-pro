@@ -14,7 +14,7 @@ class CreateStaffTypesTable extends Migration
     public function up()
     {
         Schema::create('staff_types', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('type');
             $table->timestamps();
         });
