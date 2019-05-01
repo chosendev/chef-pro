@@ -14,8 +14,8 @@ class CreateOutsideCateringPackagesTable extends Migration
     public function up()
     {
         Schema::create('outside_catering_packages', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name/food_combination');
+            $table->increments('id');
+            $table->string('food_combination');
             $table->string('price');
             $table->string('status');
             $table->timestamps();

@@ -17,9 +17,9 @@ class CreateVendorsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('phone_number');
-            $table->integer('item_type_id');
             $table->string('location');
             $table->timestamps();
+
         });
     }
 

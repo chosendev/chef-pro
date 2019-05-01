@@ -15,12 +15,15 @@ class CreateStoresTable extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger('vendor_id')->unsigned()->index();
             $table->string('quantity_stocked');
             $table->string('status');
-            $table->string('vendor_id');
             $table->date('date');
             $table->timestamps();
+            $table->foreign('vendor_id')->references('id')->on('vendors')->onUpdate('cascade')->onDelete('cascade');
+
         });
+
     }
 
     /**

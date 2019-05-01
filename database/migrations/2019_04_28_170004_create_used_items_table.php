@@ -16,8 +16,10 @@ class CreateUsedItemsTable extends Migration
         Schema::create('used_items', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('quantity');
-            $table->integer('staff_id');
+            $table->unsignedInteger('staff_id')->index();
             $table->date('date');
+            $table->foreign('staff_id')->references('id')->on('staff')->onUpdate('cascade')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

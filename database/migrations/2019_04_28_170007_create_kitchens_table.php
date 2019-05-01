@@ -15,10 +15,12 @@ class CreateKitchensTable extends Migration
     {
         Schema::create('kitchens', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('order_id');
-            $table->integer('waiter_id/staff_id');
+            $table->unsignedBigInteger('order_id')->index();
+            $table->unsignedInteger('staff_id')->index();
             $table->string('order_status');
             $table->date('date');
+            $table->foreign('order_id')->references('id')->on('orders')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreign('staff_id')->references('id')->on('staff')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

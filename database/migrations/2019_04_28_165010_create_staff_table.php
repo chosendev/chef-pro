@@ -14,14 +14,16 @@ class CreateStaffTable extends Migration
     public function up()
     {
         Schema::create('staff', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('staff_type_id');
+            $table->increments('id');
+            $table->unsignedInteger('staff_types_id')->index();
             $table->string('first_name');
             $table->string('last_name');
             $table->string('phone_number');
             $table->string('address');
-            $table->string('next_of_kean_name');
-            $table->string('next_of_kean_phone_number');
+            $table->string('next_of_kin_name');
+            $table->string('next_of_kin_phone_number');
+            $table->foreign('staff_types_id')->references('id')->on('staff_types')->onUpdate('cascade')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
