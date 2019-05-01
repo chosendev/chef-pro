@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::resource('/dashboard', 'DashboardController');
+Route::resource('/item', 'ItemController');
