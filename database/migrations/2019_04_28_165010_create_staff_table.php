@@ -11,7 +11,7 @@ class CreateStaffTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up()  
     {
         Schema::create('staff', function (Blueprint $table) {
             $table->increments('id');
