@@ -36,8 +36,8 @@
 			<li><a href="/kitchen"><em class="fa fa-bar-chart">&nbsp;</em> Kitchen</a></li>
             <li><a href="/menus"><em class="fa fa-compass">&nbsp;</em> Menu</a></li>
             <li><a href="/orders"><em class="fa fa-first-order">&nbsp;</em> Orders</a></li>
-            <li class="/pos"><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> POS</a></li>
+            <li><a href="/staff"><em class="fa fa-compass">&nbsp;</em>Staff</a></li>
 
-			<li><a href="/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+            <li><a href="/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div><!--/.sidebar-->

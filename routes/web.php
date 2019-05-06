@@ -20,3 +20,4 @@ Route::resource('/item', 'ItemController');
 Route::resource('/kitchen','KitchenController');
 Route::resource('/menus','MenuController');
 Route::resource('/orders','OrderController');
+Route::resource('/staff','StaffController');
