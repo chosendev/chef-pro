@@ -34,9 +34,10 @@
 			<li><a href="/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li><a href="/item"><em class="fa fa-calendar">&nbsp;</em> Items</a></li>
 			<li><a href="/kitchen"><em class="fa fa-bar-chart">&nbsp;</em> Kitchen</a></li>
-			<li class="/pos"><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> POS</a></li>
-			<li><a href="/order"><em class="fa fa-clone">&nbsp;</em> Orders</a></li>
-			
+            <li><a href="/menus"><em class="fa fa-compass">&nbsp;</em> Menu</a></li>
+            <li><a href="/orders"><em class="fa fa-first-order">&nbsp;</em> Orders</a></li>
+            <li class="/pos"><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> POS</a></li>
+
 			<li><a href="/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
 		</ul>
 	</div><!--/.sidebar-->
