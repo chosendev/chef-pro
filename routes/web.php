@@ -17,6 +17,3 @@ Route::get('/', function () {
 
 Route::resource('/dashboard', 'DashboardController');
 Route::resource('/item', 'ItemController');
-Route::resource('/kitchen','KitchenController');
-Route::resource('/menus','MenuController');
-Route::resource('/orders','OrderController');
