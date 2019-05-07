@@ -34,25 +34,16 @@
 			<li><a href="/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li><a href="/item"><em class="fa fa-calendar">&nbsp;</em> Items</a></li>
 			<li><a href="/kitchen"><em class="fa fa-bar-chart">&nbsp;</em> Kitchen</a></li>
-<<<<<<< HEAD
-			<li class="/pos"><a href="elements.html"><em class="fa fa-toggle-off">&nbsp;</em> POS</a></li>
 			<li><a href="/order"><em class="fa fa-clone">&nbsp;</em> Orders</a></li>
-			
-			<li><a href="/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
-=======
             <li><a href="/point_of_sale"><em class="fa fa-bar-chart">&nbsp;</em>Point of sale</a></li>
             <li><a href="/menus"><em class="fa fa-compass">&nbsp;</em> Menu</a></li>
-            <li><a href="/orders"><em class="fa fa-first-order">&nbsp;</em> Orders</a></li>
-            <li><a href="/staff"><em class="fa fa-compass">&nbsp;</em>Staff</a></li>
+       		  <li><a href="/staff"><em class="fa fa-compass">&nbsp;</em>Staff</a></li>
             <li><a href="/staff_type"><em class="fa fa-compass"></em>Staff type</a></li>
             <li><a href="/store"><em class="fa fa-compass"></em>Store</a></li>
             <li><a href="/expenses"><em class="fa fa-address-book"></em>Expenses</a></li>
             <li><a href="/outside catering-clients"><em class="fa fa-address-book"></em>Outside catering
                     Clients</a></li>
             <li><a href="/vendor"><em class="fa fa-compass">&nbsp;</em>Vendor</a></li>
-
-
             <li><a href="/logout"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
->>>>>>> create-forms
 		</ul>
 	</div><!--/.sidebar-->
