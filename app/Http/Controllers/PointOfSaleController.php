@@ -14,7 +14,7 @@ class PointOfSaleController extends Controller
      */
     public function index()
     {
-        //
+        return view('point of sale.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class PointOfSaleController extends Controller
      */
     public function create()
     {
-        //
+        return view('point of sale.create');
     }
 
     /**

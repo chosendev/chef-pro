@@ -17,3 +17,13 @@ Route::get('/', function () {
 
 Route::resource('/dashboard', 'DashboardController');
 Route::resource('/item', 'ItemController');
+Route::resource('/kitchen','KitchenController');
+Route::resource('/menus','MenuController');
+Route::resource('/orders','OrderController');
+Route::resource('/staff','StaffController');
+Route::resource('/vendor','VendorController');
+Route::resource('/point_of_sale','PointOfSaleController');
+Route::resource('/staff_type','StaffTypeController');
+Route::resource('/expenses','ExpenseController');
+Route::resource('/outside catering-clients','OutsideCateringClientController');
+Route::resource('/store','StoreController');

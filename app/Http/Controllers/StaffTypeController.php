@@ -14,7 +14,7 @@ class StaffTypeController extends Controller
      */
     public function index()
     {
-        //
+        return view('staff type.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class StaffTypeController extends Controller
      */
     public function create()
     {
-        //
+        return view('staff type.create');
     }
 
     /**
