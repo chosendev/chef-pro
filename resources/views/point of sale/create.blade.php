@@ -2,13 +2,13 @@
 
 @section('header')
 
-    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Menu'])
+    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Point of Sale'])
 
 @endsection
 
 @section('content')
     <div class="panel panel-default">
-        <div class="panel-heading">Menu:Add</div>
+        <div class="panel-heading">Point of sale:Add</div>
 
         <div class="panel-body">
             <div class="col-md-12">
@@ -33,7 +33,7 @@
 
                 <div class="row">
                     <div class="col-sm-12 text-right">
-                        <a href="{{route('menus.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
+                        <a href="{{route('vendor.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
                         text-right "
                            type="button">
                             View
@@ -44,30 +44,25 @@
                 <form action="#" method="post" enctype="multipart/form-data"><!-- form begins here -->
                     @csrf
                     <div class="row">
-                        <div class="col-sm-6">
                             <div class="form-group has-success">
-                                <label>food-combination</label>
-                                <input type="text" class="form-control" placeholder="name/food-combination">
+                                <label>Order id</label>
+                                <input type="text" class="form-control" placeholder="order id"
+                                       name="order_id">
                             </div>
 
-                            <div class="`form-group has-success">
-                                <label>price</label>
-                                <input type="text" class="form-control" placeholder="price">
-                            </div>
-                        </div>
 
-                        <div class="col-sm-6">
                             <div class="form-group has-success">
                                 <label>date</label>
-                                <input type="date" class="form-control" placeholder="date">
+                                <input type="date" class="form-control" placeholder="phone number" name="date">
                             </div>
 
-                            <div class="`form-group has-success">
-                                <label>Status</label>
-                                <input type="text" class="form-control" placeholder="status">
+
+                            <div class="form-group has-success">
+                                <label>waiter id</label>
+                                <input type="text" class="form-control" placeholder="waiter id"
+                                       name="waiter_id">
                             </div>
-                        </div>
-                    </div>
+
                     <br>
                     <center>
                         <button type="submit" class="btn btn-primary">Submit</button>

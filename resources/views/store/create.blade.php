@@ -2,13 +2,13 @@
 
 @section('header')
 
-    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Menu'])
+    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Store'])
 
 @endsection
 
 @section('content')
     <div class="panel panel-default">
-        <div class="panel-heading">Menu:Add</div>
+        <div class="panel-heading">Store:Add</div>
 
         <div class="panel-body">
             <div class="col-md-12">
@@ -33,7 +33,7 @@
 
                 <div class="row">
                     <div class="col-sm-12 text-right">
-                        <a href="{{route('menus.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
+                        <a href="{{route('store.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
                         text-right "
                            type="button">
                             View
@@ -46,13 +46,14 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group has-success">
-                                <label>food-combination</label>
-                                <input type="text" class="form-control" placeholder="name/food-combination">
+                                <label>item id</label>
+                                <input type="text" class="form-control" placeholder="item id" name="item_id">
                             </div>
 
                             <div class="`form-group has-success">
-                                <label>price</label>
-                                <input type="text" class="form-control" placeholder="price">
+                                <label>quantity stocked</label>
+                                <input type="text" class="form-control" placeholder="quantity stocked"
+                                       name="quantity_stocked">
                             </div>
                         </div>
 
@@ -63,8 +64,8 @@
                             </div>
 
                             <div class="`form-group has-success">
-                                <label>Status</label>
-                                <input type="text" class="form-control" placeholder="status">
+                                <label>vendor id</label>
+                                <input type="text" class="form-control" placeholder="vendor-id" name="vendor_id">
                             </div>
                         </div>
                     </div>

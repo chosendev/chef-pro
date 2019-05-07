@@ -14,7 +14,7 @@ class OutsideCateringClientController extends Controller
      */
     public function index()
     {
-        //
+        return view('outside catering-clients.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class OutsideCateringClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('outside catering-clients.create');
     }
 
     /**
