@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Lumino UI Elements</title>
+	<title>Chef-Pro</title>
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/font-awesome.min.css" rel="stylesheet">
 	<link href="/css/datepicker3.css" rel="stylesheet">
@@ -26,7 +26,7 @@
 			<div class="col-lg-12">
 				@yield('content')
 		    <div class="col-sm-12">
-				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
+				<p class="back-link">Chef-pro <a href="#">CodeMedia</a></p>
 			</div>
 		</div><!-- /.row -->
 	</div><!--/.main-->

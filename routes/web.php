@@ -10,14 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-<<<<<<< HEAD
 
 Route::get('/', function () {
-    return view('home');
-=======
-Route::get('/', function () {
-    return view('partials.master');
->>>>>>> home
+
+   // return view('partials.master');
+
+    return view('auth.login');
 });
 
 Route::resource('/dashboard', 'DashboardController');
@@ -37,3 +35,8 @@ Route::resource('/used_item','UsedItemController');
 
 // Route::get('/used_item', 'UsedItemController@index');
 // Route::get('/used_item/create', 'UsedItemController@create');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+

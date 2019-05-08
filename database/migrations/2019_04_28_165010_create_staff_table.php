@@ -8,7 +8,6 @@ class CreateStaffTable extends Migration
 {
     /**
      * Run the migrations.
-     *0755781214 // jacky
      * @return void
      */
     public function up()
