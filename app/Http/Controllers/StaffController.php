@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\staff;
+use App\Staff;
 use Illuminate\Http\Request;
 
 class StaffController extends Controller
@@ -14,7 +14,8 @@ class StaffController extends Controller
      */
     public function index()
     {
-        return view('staff.index');
+        $staffs = Staff::paginate(6);
+        return view('staffs.index',compact('staffs'));
     }
 
     /**
@@ -24,7 +25,7 @@ class StaffController extends Controller
      */
     public function create()
     {
-        return view('staff.create');
+        return view('staffs.create');
     }
 
     /**
@@ -35,7 +36,17 @@ class StaffController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $request->validate([
+          'first_name',
+          'last_name',
+          'phone_number',
+          'address',
+          'next_of_kin_name',
+          'next_of_kin_phone_number'
+      ]);
+      $staffs = new Staff($request->all());
+      $staffs->save();
+      return redirect('staffs/create')->with('success','A new Staff has been Registered');
     }
 
     /**

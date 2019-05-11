@@ -10,17 +10,16 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('home');
-});
+//Route::get('/', function () {
+//    return view('orders.index');
+//});
 
 Route::resource('/dashboard', 'DashboardController');
-Route::resource('/item', 'ItemController');
+Route::resource('/items', 'ItemController');
 Route::resource('/kitchen','KitchenController');
 Route::resource('/menus','MenuController');
 Route::resource('/orders','OrderController');
-Route::resource('/staff','StaffController');
+Route::resource('/staffs','StaffController');
 Route::resource('/vendor','VendorController');
 Route::resource('/point_of_sale','PointOfSaleController');
 Route::resource('/staff_type','StaffTypeController');

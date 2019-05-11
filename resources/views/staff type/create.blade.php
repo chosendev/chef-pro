@@ -46,7 +46,7 @@
                     <div class="row">
                             <div class="form-group has-success">
                                 <label>staff type</label>
-                                <select id="order status" class="form-control">
+                                <select id="staff_type" class="form-control">
                                     <option value="default">Select(default)</option>
                                     <option value="waiter">waiter</option>
                                     <option value="cheff">cheff</option>
