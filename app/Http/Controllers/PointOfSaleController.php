@@ -14,6 +14,7 @@ class PointOfSaleController extends Controller
      */
     public function index()
     {
+
         return view('point of sale.index');
     }
 
@@ -36,6 +37,16 @@ class PointOfSaleController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name',
+            'order_id',
+            'staff_id',
+            'date',
+
+        ]);
+        $point_of_sale = new point_of_sale($request->all());
+        $point_of_sale->save();
+        return redirect('point_of_sale/create')->with('success','A point of sale has been registered');
     }
 
     /**
