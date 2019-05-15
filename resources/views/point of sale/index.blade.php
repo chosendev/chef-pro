@@ -25,19 +25,19 @@
                     </div>
                 </div>
                 <div class="row">
-                    @foreach($point_of_sale as $point_of_sale)
+                    @foreach($point_of_sale as $point_of_sales)
 
                         <div class="col-md-4">
                             <div class="panel panel-success">
-                                <div class="panel panel-teal"><h2>{{$point_of_sale->first_name}}</h2>
+                                <div class="panel panel-teal"><h2>{{$point_of_sales->name}}</h2>
                                     <span class="pull-right clickable panel-toggle"><em
                                             class="fa fa-toggle-up"></em></span></div>
                                 <div class="panel-body">
-                                    <h3>Last Name</h3><h4>{{$staff->last_name}}</h4>
-                                    <h3>Phone Number</h3><h4>{{$staff->phone_number}}</h4>
-                                    <h3>Address</h3><h4>{{$staff->address}}</h4>
-                                    <h3>Next of Kin Name</h3><h4>{{$staff->next_of_kin_name}}</h4>
-                                    <h3>Next of Kin Number</h3><h4>{{$staff->next_of_kin_phone_number}}</h4>
+                                    {{--<h3>Last Name</h3><h4>{{$staff->last_name}}</h4>--}}
+                                    {{--<h3>Phone Number</h3><h4>{{$staff->phone_number}}</h4>--}}
+                                    {{--<h3>Address</h3><h4>{{$staff->address}}</h4>--}}
+                                    {{--<h3>Next of Kin Name</h3><h4>{{$staff->next_of_kin_name}}</h4>--}}
+                                    {{--<h3>Next of Kin Number</h3><h4>{{$staff->next_of_kin_phone_number}}</h4>--}}
 
 
                                 </div>
