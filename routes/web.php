@@ -10,9 +10,14 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+<<<<<<< HEAD
 
 Route::get('/', function () {
     return view('home');
+=======
+Route::get('/', function () {
+    return view('partials.master');
+>>>>>>> home
 });
 
 Route::resource('/dashboard', 'DashboardController');
