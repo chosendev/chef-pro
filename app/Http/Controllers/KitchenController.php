@@ -14,7 +14,8 @@ class KitchenController extends Controller
      */
     public function index()
     {
-        return view('kitchen.index');
+        $kitchen  = kitchen::paginate(6);
+        return view('kitchen.index',compact('kitchen'));
     }
 
     /**
@@ -36,6 +37,15 @@ class KitchenController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'order_id'=>'required',
+            'staff_id' =>'required',
+            'order_status'=>'required',
+            'date'=>'required',
+        ]);
+        $kitchen = new  kitchen($request->all());
+        $kitchen->save();
+        return redirect('kitchen/create')->with('success','Thank you for Registering ');
     }
 
     /**
@@ -44,9 +54,10 @@ class KitchenController extends Controller
      * @param  \App\kitchen  $kitchen
      * @return \Illuminate\Http\Response
      */
-    public function show(kitchen $kitchen)
+    public function show(Request $request)
     {
         //
+
     }
 
     /**

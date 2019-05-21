@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\outside_catering_package;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Compound;
 
 class OutsideCateringPackageController extends Controller
 {
@@ -15,6 +16,8 @@ class OutsideCateringPackageController extends Controller
     public function index()
     {
         //
+        $outside_catering_packages = outside_catering_package::paginate(6);
+        return view('outside_catering_packages.index',compact('outside_catering_packages'));
     }
 
     /**
@@ -25,6 +28,7 @@ class OutsideCateringPackageController extends Controller
     public function create()
     {
         //
+        return view('outside_catering_packages.create');
     }
 
     /**
@@ -36,6 +40,16 @@ class OutsideCateringPackageController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'food_combination' =>'required',
+            'price' =>'required',
+            'status' =>' required',
+        ]);
+
+        $outside_catering_packages = new outside_catering_package($request->all());
+        $outside_catering_packages->save();
+        return redirect('outside_catering_packages/create')->with('success','Successfully add');
+
     }
 
     /**

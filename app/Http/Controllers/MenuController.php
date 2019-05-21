@@ -15,7 +15,8 @@ class MenuController extends Controller
     public function index()
     {
         //
-        return view('menus.index');
+        $menus = menu::paginate(6);
+        return view('menus.index',compact('menus'));
     }
 
     /**
@@ -38,6 +39,15 @@ class MenuController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'food_combination' =>'required',
+            'price' => 'required',
+            'status' =>'required',
+            'date'=>'required'
+        ]);
+        $menus = new menu($request->all());
+        $menus->save();
+        return redirect('menus/create')->with('success','Welcome A board, successfully registered');
     }
 
     /**

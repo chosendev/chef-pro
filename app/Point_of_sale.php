@@ -4,9 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class point_of_sale extends Model
+class Point_of_sale extends Model
 {
     //
+    protected $table ='Point_of_sales';
     protected $fillable =
         [
             'date',

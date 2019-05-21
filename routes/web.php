@@ -21,10 +21,11 @@ Route::resource('/menus','MenuController');
 Route::resource('/orders','OrderController');
 Route::resource('/staffs','StaffController');
 Route::resource('/vendor','VendorController');
-Route::resource('/point_of_sale','PointOfSaleController');
+Route::resource('/point_of_sales','PointOfSaleController');
 Route::resource('/staff_type','StaffTypeController');
 Route::resource('/expenses','ExpenseController');
-Route::resource('/outside catering-clients','OutsideCateringClientController');
+Route::resource('/outside_catering_clients','OutsideCateringClientController');
+Route::resource('/outside_catering_packages','OutsideCateringPackageController');
 Route::resource('/store','StoreController');
 Route::resource('/used_item','UsedItemController');
 
