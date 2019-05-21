@@ -13,7 +13,7 @@
         <div class="panel-body">
             <div class="col-md-12">
                 <!--notification alert -->
-                <div class="container">
+
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -29,7 +29,7 @@
                             {{ session()->get('success') }}
                         </div><br/>
                     @endif
-                </div><!-- End of notification alert -->
+                <!-- End of notification alert -->
 
                 <div class="row">
                     <div class="col-sm-12 text-right">
@@ -41,7 +41,9 @@
                     </div>
                 </div>
                 <br>
-                <form action="#" method="post" enctype="multipart/form-data"><!-- form begins here -->
+                <form action="{{route('kitchen.store')}}" method="post" enctype="multipart/form-data"><!-- form begins
+                here
+                 -->
                     @csrf
                     <div class="row">
                         <div class="col-sm-6">
@@ -50,6 +52,12 @@
                                 <input type="text" class="form-control" placeholder="order"
                                        name="order_id">
                             </div>
+
+                            <div class="form-group has-success">
+                                <label>staff  </label>
+                                <input type="text" class="form-control" placeholder="staff"
+                                       name="staff_id">
+                            </div>
                         </div>
 
 
@@ -57,7 +65,7 @@
                            <div class="col-sm-6">
                             <div class="form-group has-success">
                                 <label>Order status</label>
-                                 <select id="order_status" class="form-control">
+                                 <select  name="order_status" class="form-control">
                                     <option value="default">select</option>
                                     <option value="in_the_queue">In the queue</option>
                                     <option value="ready">Ready</option>
@@ -74,9 +82,9 @@
                         </div>
 
                     <br>
-                    <center>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </center>
+
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
 
                 </form><!-- form close --->
             </div>

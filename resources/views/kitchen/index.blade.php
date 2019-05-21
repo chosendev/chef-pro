@@ -24,8 +24,26 @@
                         </a>
                     </div>
                 </div>
-                this is gona be so much awesome .kitchen staff goes in here........ from the database
+      <div class="row">
+          @foreach($kitchen as $kitchens)
+          <div class="col-md-4">
+          <div class="panel panel-success">
+              <div class="panel panel-teal"><h2>{{$kitchens->order_status}}</h2>
+                  <span class="pull-right clickable panel-toggle"><em
+                          class="fa fa-toggle-up"></em></span></div>
+              <div class="panel-body">
+                  {{--<h3>Last Name</h3><h4>{{$staff->last_name}}</h4>--}}
+                  {{--<h3>Phone Number</h3><h4>{{$staff->phone_number}}</h4>--}}
+                  {{--<h3>Address</h3><h4>{{$staff->address}}</h4>--}}
+                  {{--<h3>Next of Kin Name</h3><h4>{{$staff->next_of_kin_name}}</h4>--}}
+                  {{--<h3>Next of Kin Number</h3><h4>{{$staff->next_of_kin_phone_number}}</h4>--}}
 
+
+              </div>
+          </div>
+      </div>
+              @endforeach
+      </div>
             </div>
         </div>
     </div>

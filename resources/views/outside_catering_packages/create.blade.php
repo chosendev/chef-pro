@@ -2,17 +2,18 @@
 
 @section('header')
 
-    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Expenses'])
+    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Outside catering packages'])
 
 @endsection
 
 @section('content')
     <div class="panel panel-default">
-        <div class="panel-heading">Expenses:Add</div>
+        <div class="panel-heading">Outside catering packages:Add</div>
 
         <div class="panel-body">
             <div class="col-md-12">
                 <!--notification alert -->
+
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -32,7 +33,8 @@
 
                 <div class="row">
                     <div class="col-sm-12 text-right">
-                        <a href="{{route('expenses.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
+                        <a href="{{route('outside_catering_packages.index')}}" style="height: 50px;width: 200px;"
+                           class="btn btn-info
                         text-right "
                            type="button">
                             View
@@ -40,41 +42,35 @@
                     </div>
                 </div>
                 <br>
-                <form action="{{route('expenses.store')}}" method="post" enctype="multipart/form-data"><!-- form begins here -->
+                <form action="{{route('outside_catering_packages.store')}}" method="post"
+                      enctype="multipart/form-data"><!-- form begins
+                here -->
                     @csrf
+
                     <div class="row">
-                        <div class="form-group has-success">
-                            <label>Name</label>
-                            <input type="text" class="form-control" placeholder="name/type"
-                                   name="name">
-                        </div>
 
-
-                        <div class="form-group has-success">
-                            <label>Cost</label>
-                            <input type="text" class="form-control" placeholder="Cost" name="cost">
-                        </div>
-
+                            <div class="form-group has-success">
+                                <label>Food combination</label>
+                                <input type="text" class="form-control" placeholder="name" name="food_combination">
+                            </div>
 
                         <div class="form-group has-success">
-                            <label>receipt/voucher</label>
-                            <input type="text" class="form-control" placeholder="receipt/voucher"
-                                   name="receipt">
+                            <label>Price</label>
+                            <input type="text" class="form-control" placeholder="name" name="price">
                         </div>
 
                         <div class="form-group has-success">
-                            <label>Date</label>
-                            <input type="date" class="form-control" placeholder="date"
-                                   name="date">
+                            <label>Status</label>
+                            <input type="text" class="form-control" placeholder="name" name="status">
                         </div>
 
-                        <br>
-                        <center>
+
                             <button type="submit" class="btn btn-primary">Submit</button>
-                        </center>
+
                     </div>
                 </form><!-- form close --->
             </div>
         </div>
+    </div>
     </div>
 @endsection

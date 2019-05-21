@@ -14,7 +14,8 @@ class OutsideCateringClientController extends Controller
      */
     public function index()
     {
-        return view('outside catering-clients.index');
+        $outside_catering_clients = outside_catering_client::paginate(6);
+        return view('outside_catering_clients.index',compact('outside_catering_clients'));
     }
 
     /**
@@ -24,7 +25,7 @@ class OutsideCateringClientController extends Controller
      */
     public function create()
     {
-        return view('outside catering-clients.create');
+        return view('outside_catering_clients.create');
     }
 
     /**
@@ -36,6 +37,16 @@ class OutsideCateringClientController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'client_name'=>'required',
+            'cost' => 'required',
+            'date' =>'required',
+            'address' => 'required',
+            'package_id' => 'required',
+        ]);
+        $outside_catering_clients = new outside_catering_client($request->all());
+        $outside_catering_clients->save();
+        return redirect('outside_catering_clients/create')->with('success','A new outside catering client has been Registered');
     }
 
     /**

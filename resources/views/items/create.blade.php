@@ -41,10 +41,11 @@
                     </div>
                 </div>
                 <br>
-                <form action="#" method="post" enctype="multipart/form-data"><!-- form begins here -->
+                <form action="{{route('items.store')}}" method="post" enctype="multipart/form-data"><!-- form begins
+                here -->
                     @csrf
 
-                    <div class="row" >
+                    <div class="row">
                         <div class="col-sm-6">
 
                             <div class="form-group has-success">
@@ -52,14 +53,14 @@
                                 <input type="name" class="form-control" placeholder="name" name="name">
                             </div>
 
-                            
-                                                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
 
                         </div>
-</div>
+                    </div>
                 </form><!-- form close --->
             </div>
-            </div>
         </div>
+    </div>
     </div>
 @endsection

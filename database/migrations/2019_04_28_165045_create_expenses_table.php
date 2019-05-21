@@ -17,7 +17,7 @@ class CreateExpensesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('cost');
-            $table->string('receipt_or_vourcher_number');
+            $table->string('receipt');
             $table->date('date');
             $table->timestamps();
         });

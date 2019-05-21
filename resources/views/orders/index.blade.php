@@ -10,7 +10,6 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">Orders:All</div>
-        {{--<div class="panel-body">--}}
         <div class="col-md-12">
             <div class="row">
                 <div class="col-sm-12 text-right">
@@ -46,7 +45,6 @@
 
             </div>
         </div>
-        {{--</div>--}}
     </div>
    <center> <?php echo $orders->render();?></center>
 @endsection

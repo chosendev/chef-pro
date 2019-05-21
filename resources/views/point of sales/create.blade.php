@@ -33,7 +33,8 @@
 
                 <div class="row">
                     <div class="col-sm-12 text-right">
-                        <a href="{{route('vendor.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
+                        <a href="{{route('point_of_sale.index')}}" style="height: 50px;width: 200px;" class="btn
+                        btn-info
                         text-right "
                            type="button">
                             View

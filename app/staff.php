@@ -4,14 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class expense extends Model
+class staff extends Model
 {
     //
     protected $fillable =
     [
-    	'name',
-    	'cost',
-    	'receipt',
-    	'date',
+    	'staff_type_id',
     ];
 }
