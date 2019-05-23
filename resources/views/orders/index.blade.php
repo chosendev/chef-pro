@@ -30,7 +30,7 @@
 
                     <div class="col-md-4">
                         <div class="panel panel-success">
-                            <div class="panel panel-teal"><h2>{{$order->food_combination}}</h2></div>
+                            <div class="panel panel-default"><h2>{{$order->food_combination}}</h2></div>
                             <div class="panel-body ">
                                 <h3>Price</h3><h4>{{$order->price}}</h4>
                                <h3>Status</h3> <h4>{{$order->status}}</h4>

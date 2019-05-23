@@ -13,4 +13,5 @@ $factory->define(Order::class, function (Faker $faker) {
         'status'=>$faker->name,
         'date'=>$faker->dateTime,
     ];
+
 });

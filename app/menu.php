@@ -12,6 +12,7 @@ class menu extends Model
             'food_combination',
             'price',
             'status',
+            'image',
             'date',
         ];
 }

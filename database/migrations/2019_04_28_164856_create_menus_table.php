@@ -17,6 +17,7 @@ class CreateMenusTable extends Migration
             $table->bigIncrements('id');
             $table->string('food_combination');
             $table->string('price');
+            $table->string('image')->nullable();
             $table->string('status'); //available or not available
             $table->date('date');
             $table->timestamps();
