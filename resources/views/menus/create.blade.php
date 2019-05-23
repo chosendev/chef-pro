@@ -74,7 +74,7 @@
 
                         <div class="`form-group has-success">
                             <label>image</label>
-                            <input type="file" class="form-control" placeholder="image" name="image">
+                            <input type="file" class="py-4" placeholder="image" name="image">
                         </div>
                     </div>
                     <br>
