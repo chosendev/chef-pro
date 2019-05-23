@@ -13,7 +13,7 @@ Route::get('/', function () {
     return view('partials.master');
 });
 
-Route::resource('/dashboard', 'DashboardController');
+//Route::resource('/dashboard', 'DashboardController');
 Route::resource('/items', 'ItemController');
 Route::resource('/kitchen','KitchenController');
 Route::resource('/menus','MenuController');
