@@ -29,8 +29,11 @@
 
                         <div class="col-md-4">
                             <div class="panel panel-success">
-                                <div class="panel panel-teal"><h2>{{$menu->food_combination}}</h2></div>
+                                <div class="panel panel-default"><h2>{{$menu->food_combination}}</h2></div>
                                 <div class="panel-body ">
+                                    <div class="col-sm-7">
+                                    <img src="{{URL::to('/')}}/images/{{$menu->image}}" class="img-rounded"
+                                         width="200"></div>
                                     <h3>Price</h3><h4>{{$menu->price}}</h4>
                                     <h3>Status</h3> <h4>{{$menu->status}}</h4>
                                     <h3>Date</h3> <h4>{{$menu->date}}</h4>
@@ -43,6 +46,9 @@
                     @endforeach
 
                 </div>
+                <center> <?php echo $menus->render();?></center>
+
             </div>
-            </div>
+
+    </div>
 @endsection

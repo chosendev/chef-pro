@@ -71,6 +71,11 @@
                                 <input type="date" class="form-control" placeholder="date" name="date">
                             </div>
                         </div>
+
+                        <div class="`form-group has-success">
+                            <label>image</label>
+                            <input type="file" class="form-control" placeholder="image" name="image">
+                        </div>
                     </div>
                     <br>
                         <button type="submit" class="btn btn-primary">Submit</button>

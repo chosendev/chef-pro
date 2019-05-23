@@ -16,7 +16,7 @@ class MenuController extends Controller
     {
         //
         $menus = menu::paginate(6);
-        return view('menus.index',compact('menus'));
+        return view('menus.index', compact('menus'));
     }
 
     /**
@@ -33,27 +33,38 @@ class MenuController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         //
         $request->validate([
-            'food_combination' =>'required',
+            'food_combination' => 'required',
             'price' => 'required',
-            'status' =>'required',
-            'date'=>'required'
+            'status' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'date' => 'required'
         ]);
-        $menus = new menu($request->all());
-        $menus->save();
-        return redirect('menus/create')->with('success','Welcome A board, successfully registered');
+        $image = $request->file('image');
+        $imageName = time() . '.' . $request->image->getClientOriginalName();
+        $request->image->move(public_path('images'), $imageName);
+
+        $form_data = array(
+            'food_combination' => $request->food_combination,
+            'price' => $request->price,
+            'status' => $request->status,
+            'date' => $request->date,
+            'image' => $imageName,
+        );
+        menu::create($form_data);
+        return redirect('menus/create')->with('success', 'A new Menu has been Successfully Registered');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\menu  $menu
+     * @param  \App\menu $menu
      * @return \Illuminate\Http\Response
      */
     public function show(menu $menu)
@@ -64,7 +75,7 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\menu  $menu
+     * @param  \App\menu $menu
      * @return \Illuminate\Http\Response
      */
     public function edit(menu $menu)
@@ -75,8 +86,8 @@ class MenuController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\menu  $menu
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\menu $menu
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, menu $menu)
@@ -87,7 +98,7 @@ class MenuController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\menu  $menu
+     * @param  \App\menu $menu
      * @return \Illuminate\Http\Response
      */
     public function destroy(menu $menu)
