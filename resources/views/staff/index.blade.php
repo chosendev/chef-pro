@@ -36,6 +36,7 @@
                 <th scope="col">NOK Phone Number</th>
                 
             </tr>
+            
                 </thead>
                 <tbody>
                     @foreach($staffs as $staff)
