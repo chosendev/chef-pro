@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\store;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreRequest;
 
 class StoreController extends Controller
 {
@@ -14,7 +15,8 @@ class StoreController extends Controller
      */
     public function index()
     {
-        return view('store.index');
+        $stores = store::all();
+        return view('store.index', compact('stores'));
     }
 
     /**
@@ -33,9 +35,15 @@ class StoreController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-        //
+        $store = new store($request->all());
+        if($store->save()){
+            session()->flash('message','Saved Successfully');
+            return redirect('/store');
+        }
+        session()->flash('message','Failed to Save');
+        return redirect()->back()->withErrors();
     }
 
     /**
@@ -44,9 +52,10 @@ class StoreController extends Controller
      * @param  \App\store  $store
      * @return \Illuminate\Http\Response
      */
-    public function show(store $store)
+    public function show($id)
     {
-        //
+        $store = store::find($id);
+        return view('store.show', compact('store')); 
     }
 
     /**
@@ -57,7 +66,7 @@ class StoreController extends Controller
      */
     public function edit(store $store)
     {
-        //
+        return view('store.edit',compact('store'));
     }
 
     /**
@@ -67,9 +76,16 @@ class StoreController extends Controller
      * @param  \App\store  $store
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, store $store)
+    public function update(Request $request,$id)
     {
-        //
+        $store = store::find($id);
+
+        $store -> update($request->all());
+        if($store->save())
+        {
+            return redirect('/store');
+        }
+        return redirect()->back();
     }
 
     /**
@@ -80,6 +96,8 @@ class StoreController extends Controller
      */
     public function destroy(store $store)
     {
-        //
+        $store->delete();
+
+        return redirect('/store');
     }
 }

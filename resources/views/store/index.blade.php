@@ -25,7 +25,29 @@
                     </div>
                 </div>
                 this is gona be so much awesome .kitchen staff goes in here........ from the database
-
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Item Id</th>
+                            <th scope="col">Quantity Stocked</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Vendor Id</th>
+                            <th scope="col">Date</th>
+                            
+                        </tr>
+                    </thead>
+                    <body>
+                        @foreach($stores as $store)
+                        <tr>
+                            <td><a href="/store/{{ $store->id }}">{{ $store->item_id }}</a></td>
+                            <td>{{ $store->quantity_stocked }}</td>
+                            <td>{{ $store->status }}</td>
+                            <td>{{ $store->vendor_id }}</td>
+                            <td>{{ $store->date }}</td>
+                        </tr>
+                        @endforeach
+                    </body>
+                </table>
             </div>
         </div>
     </div>

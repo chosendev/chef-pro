@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\used_item;
+use App\UsedItem;
 use Illuminate\Http\Request;
+use App\Http\Requests\UsedItemRequest;
 
 class UsedItemController extends Controller
 {
@@ -14,7 +15,8 @@ class UsedItemController extends Controller
      */
     public function index()
     {
-        //
+        $used_items = UsedItem::all();
+        return view ('useditems.index', compact('used_items'));
     }
 
     /**
@@ -24,7 +26,7 @@ class UsedItemController extends Controller
      */
     public function create()
     {
-        //
+        return view ('useditems.create');
     }
 
     /**
@@ -33,9 +35,16 @@ class UsedItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UsedItemRequest $request)
     {
-        //
+        $used_item = new UsedItem($request->all());
+        if($used_item->save())
+        {
+            session()->flash('message','Saved Successfully');
+            return redirect('/used_item');
+        }
+        session()->flash('message','Failed to Save');
+        return redirect()->back()->withErrors();
     }
 
     /**
@@ -44,9 +53,11 @@ class UsedItemController extends Controller
      * @param  \App\used_item  $used_item
      * @return \Illuminate\Http\Response
      */
-    public function show(used_item $used_item)
+    public function show($id)
     {
-        //
+        $used_item = UsedItem::find($id);
+
+        return view('useditems.show',compact('used_item'));
     }
 
     /**
@@ -57,7 +68,7 @@ class UsedItemController extends Controller
      */
     public function edit(used_item $used_item)
     {
-        //
+        return view('useditems.edit', compact('used_item'));
     }
 
     /**
@@ -67,9 +78,16 @@ class UsedItemController extends Controller
      * @param  \App\used_item  $used_item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, used_item $used_item)
+    public function update(Request $request,$id)
     {
-        //
+        $used_item = UsedItem::find($id);
+
+        $used_item->update($request->all());
+        if($used_item->save())
+        {
+            return redirect('/used_item');
+        }
+        return redirect()->back();
     }
 
     /**
@@ -80,6 +98,8 @@ class UsedItemController extends Controller
      */
     public function destroy(used_item $used_item)
     {
-        //
+        $used_item->delete();
+
+        return redirect('/used_item');
     }
 }

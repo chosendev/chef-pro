@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <br>
-                <form action="#" method="post" enctype="multipart/form-data"><!-- form begins here -->
+                <form action="/store" method="post" enctype="multipart/form-data"><!-- form begins here -->
                     @csrf
                     <div class="row">
                         <div class="col-sm-6">
@@ -50,17 +50,22 @@
                                 <input type="text" class="form-control" placeholder="item id" name="item_id">
                             </div>
 
-                            <div class="`form-group has-success">
+                            <div class="form-group has-success">
                                 <label>quantity stocked</label>
                                 <input type="text" class="form-control" placeholder="quantity stocked"
                                        name="quantity_stocked">
+                            </div>
+                            <div class="form-group has-success">
+                                <label>Status</label>
+                                <input type="text" class="form-control" placeholder="status" name="status">
+                                
                             </div>
                         </div>
 
                         <div class="col-sm-6">
                             <div class="form-group has-success">
                                 <label>date</label>
-                                <input type="date" class="form-control" placeholder="date">
+                                <input type="date" class="form-control" name="date">
                             </div>
 
                             <div class="`form-group has-success">

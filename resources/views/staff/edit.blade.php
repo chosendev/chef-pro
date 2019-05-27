@@ -2,13 +2,13 @@
 
 @section('header')
 
-    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Staff'])
+    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Edit Page', 'header' => 'Staff'])
 
 @endsection
 
 @section('content')
     <div class="panel panel-default">
-        <div class="panel-heading">Staff:Add</div>
+        <div class="panel-heading">Staff:Edit</div>
 
         <div class="panel-body">
             <div class="col-md-12">
@@ -31,7 +31,7 @@
                     @endif
                 </div><!-- End of notification alert -->
 
-                <div class="row">
+               {{--  <div class="row">
                     <div class="col-sm-12 text-right">
                         <a href="{{route('staff.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
                         text-right "
@@ -39,33 +39,34 @@
                             View
                         </a>
                     </div>
-                </div>
+                </div> --}}
                 <br>
-                <form action="/staff" method="POST" enctype="multipart/form-data"><!-- form begins here -->
+                <form action="/staff/{{ $staff->id }}" method="POST"><!-- form begins here -->
                     @csrf
+                    {{ method_field('put') }}
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group has-success">
                                 <label>staff type id</label>
                                 <input type="text" class="form-control" placeholder="staff type id"
-                                       name="staff_type_id">
+                                       name="staff_type_id" value="{{ $staff->staff_type_id }}">
                             </div>
 
                             <div class="`form-group has-success">
                                 <label>first name</label>
-                                <input type="text" class="form-control" placeholder="first name" name="first_name">
+                                <input type="text" class="form-control" placeholder="first name" name="first_name" value="{{ $staff->first_name }}">
                             </div>
                         </div>
 
                         <div class="col-sm-6">
                             <div class="form-group has-success">
                                 <label>last name</label>
-                                <input type="text" class="form-control" placeholder="last name" name="last_name">
+                                <input type="text" class="form-control" placeholder="last name" name="last_name" value="{{ $staff->last_name }}">
                             </div>
 
                             <div class="`form-group has-success">
                                 <label>Phone number</label>
-                                <input type="text" class="form-control" placeholder="phone number" name="phone_number">
+                                <input type="text" class="form-control" placeholder="phone number" name="phone_number" value="{{ $staff->phone_number }}">
                             </div>
 
 
@@ -75,13 +76,13 @@
                         <div class="col-sm-6">
                             <div class="form-group has-success">
                                 <label>Address</label>
-                                <input type="text" class="form-control" placeholder="address" name="address">
+                                <input type="text" class="form-control" placeholder="address" name="address" value="{{ $staff->address }}">
                             </div>
 
                             <div class="`form-group has-success">
                                 <label>Next of kin names</label>
                                 <input type="text" class="form-control" placeholder="next of kin name"
-                                       name="next_of_kin_name">
+                                       name="next_of_kin_name" value="{{ $staff->next_of_kin_name }}">
                             </div>
 
 
@@ -90,7 +91,7 @@
                             <div class="form-group has-success">
                                 <label>Next of kin Phone number</label>
                                 <input type="text" class="form-control" placeholder="next of kin phone number"
-                                       name="next_of_kin_phone_number">
+                                       name="next_of_kin_phone_number" value="{{ $staff->next_of_kin_phone_number }}">
                             </div>
                             </div>
 

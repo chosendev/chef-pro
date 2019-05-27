@@ -24,6 +24,26 @@
                     </div>
                 </div>
                 this is gona be so much awesome .kitchen staff goes in here........ from the database
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Item Id</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Location</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($vendors as $vendor)
+                            <tr>
+                                <td><a href="/vendor/{{ $vendor->id }}">{{ $vendor->name }}</a></td>
+                                <td>{{ $vendor->item_id }}</td>
+                                <td>{{ $vendor->phone_number }}</td>
+                                <td>{{ $vendor->location }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
 
             </div>
         </div>

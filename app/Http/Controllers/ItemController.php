@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\item;
 use Illuminate\Http\Request;
+use App\Http\Requests\ItemRequest;
 
 class ItemController extends Controller
 {
@@ -14,7 +15,8 @@ class ItemController extends Controller
      */
     public function index()
     {
-        //
+        $items = item::all();
+        return view('items.index', compact('items'));
     }
 
     /**
@@ -24,7 +26,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('items.create');
     }
 
     /**
@@ -33,9 +35,16 @@ class ItemController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ItemRequest $request)
     {
-        //
+        $item = new item($request->all());
+        if($item->save())
+        {
+            session()->flash('message','Item Saved Successfully');
+            return redirect('/item');
+        }
+        session()->flash('message','Failed to Save');
+        return redirect()->back()->withErrors();
     }
 
     /**
@@ -44,9 +53,11 @@ class ItemController extends Controller
      * @param  \App\item  $item
      * @return \Illuminate\Http\Response
      */
-    public function show(item $item)
+    public function show($id)
     {
-        //
+        $item = item::find($id);
+
+        return view('items.show',compact('item'));
     }
 
     /**
@@ -57,7 +68,7 @@ class ItemController extends Controller
      */
     public function edit(item $item)
     {
-        //
+        return view('items.edit', compact('item'));
     }
 
     /**
@@ -67,9 +78,16 @@ class ItemController extends Controller
      * @param  \App\item  $item
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, item $item)
+    public function update(Request $request,$id)
     {
-        //
+        $item = item::find($id);
+
+        $item ->update($request->all());
+        if($item->save())
+        {
+            return redirect('/item');
+        }
+        return redirect()->back();
     }
 
     /**
@@ -80,6 +98,8 @@ class ItemController extends Controller
      */
     public function destroy(item $item)
     {
-        //
+        $item->delete();
+
+        return redirect('/item');
     }
 }
