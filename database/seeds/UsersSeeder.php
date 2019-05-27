@@ -1,11 +1,11 @@
 <?php
 
 use Carbon\Carbon;
-use App\Models\User;
+use App\User;
 use Illuminate\Database\Seeder;
 // use App\Models\NGO\Organisation;
 
-class UsersTableSeeder extends Seeder
+class UsersSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,22 +17,19 @@ class UsersTableSeeder extends Seeder
         $users = [
             [
                 'name' => 'Chosen',
-                // 'organisation_id' => 1,
-                'email' => 'pius@ensibuuko.com',
+                'email' => 'chosen@ensibuuko.com',
                 'password' => bcrypt('secret'),
                 'email_verified_at' => Carbon::now()
             ],
             [
                 'name' => 'Opuda',
-                // 'organisation_id' => 1,
-                'email' => 'mwaka@ensibuuko.com',
+                'email' => 'opuda@ensibuuko.com',
                 'password' => bcrypt('secret'),
                 'email_verified_at' => Carbon::now()
             ],
             [
                 'name' => 'Dorothy',
-                //'is_super_admin' => true,
-                'email' => 'ambrose@ensibuuko.com',
+                'email' => 'dorothy@ensibuuko.com',
                 'password' => bcrypt('secret'),
                 'email_verified_at' => Carbon::now()
             ],
@@ -43,7 +40,7 @@ class UsersTableSeeder extends Seeder
             User::create($user);
         }
 
-        /*foreach (Organisation::all() as $org) {
+        /*foreach (Restaurant::all() as $restaurant) {
             factory(App\Models\User::class, 2)->make()->each(function ($user) use ($org) {
                 $user->organisation_id = $org->id;
                 $user->save();
