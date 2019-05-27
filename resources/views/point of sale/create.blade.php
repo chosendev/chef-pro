@@ -41,33 +41,39 @@
                     </div>
                 </div>
                 <br>
-                <form action="#" method="post" enctype="multipart/form-data"><!-- form begins here -->
+                <form action="{{route('point_of_sale.store')}}" method="post" enctype="multipart/form-data"><!-- form
+                begins here -->
                     @csrf
                     <div class="row">
-                            <div class="form-group has-success">
-                                <label>Order id</label>
-                                <input type="text" class="form-control" placeholder="order id"
-                                       name="order_id">
-                            </div>
+                        <div class="form-group has-success">
+                            <label>Date</label>
+                            <input type="date" class="form-control" placeholder="phone number" name="date">
+                        </div>
+
+                        <div class="form-group has-success">
+                            <label>Name</label>
+                            <input type="text" class="form-control" placeholder="name"
+                                   name="name">
+                        </div>
 
 
-                            <div class="form-group has-success">
-                                <label>date</label>
-                                <input type="date" class="form-control" placeholder="phone number" name="date">
-                            </div>
+                        <div class="form-group has-success">
+                            <label>Order Id</label>
+                            <input type="text" class="form-control" placeholder="Order id" name="order_id">
+                        </div>
 
 
-                            <div class="form-group has-success">
-                                <label>waiter id</label>
-                                <input type="text" class="form-control" placeholder="waiter id"
-                                       name="waiter_id">
-                            </div>
+                        <div class="form-group has-success">
+                            <label>Staff id</label>
+                            <input type="text" class="form-control" placeholder="Staff id"
+                                   name="staff_id">
+                        </div>
 
-                    <br>
-                    <center>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </center>
-
+                        <br>
+                        <center>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </center>
+                    </div>
                 </form><!-- form close --->
             </div>
         </div>
