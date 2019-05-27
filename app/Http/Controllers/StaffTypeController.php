@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\staff_type;
+use App\StaffType;
 use Illuminate\Http\Request;
+use App\Http\Requests\StaffTypeRequest;
 
 class StaffTypeController extends Controller
 {
@@ -14,7 +15,9 @@ class StaffTypeController extends Controller
      */
     public function index()
     {
-        return view('staff type.index');
+        $stafftypes = StaffType::all();
+
+        return view('staff type.index', compact('stafftypes'));
     }
 
     /**
@@ -33,10 +36,17 @@ class StaffTypeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StaffTypeRequest $request)
     {
-        //
-    }
+        $staff_type = new StaffType($request->all());
+        if($staff_type->save())
+        {
+            session()->flash('message','Saved Successfully');
+            return redirect('/staff_type');
+        }
+        session()->flash('message','Failed To Save');
+        return redirect()->back()->withErrors();
+    }   
 
     /**
      * Display the specified resource.

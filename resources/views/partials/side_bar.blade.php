@@ -33,6 +33,7 @@
 			</li>
 			<li><a href="/dashboard"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
 			<li><a href="/item"><em class="fa fa-calendar">&nbsp;</em> Items</a></li>
+			<li><a href="/used_item"><em class="fa fa-navicon">&nbsp;</em>Used Items</a></li>
 			<li><a href="/kitchen"><em class="fa fa-bar-chart">&nbsp;</em> Kitchen</a></li>
 			<li><a href="/order"><em class="fa fa-clone">&nbsp;</em> Orders</a></li>
             <li><a href="/point_of_sale"><em class="fa fa-bar-chart">&nbsp;</em>Point of sale</a></li>

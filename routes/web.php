@@ -27,3 +27,8 @@ Route::resource('/staff_type','StaffTypeController');
 Route::resource('/expenses','ExpenseController');
 Route::resource('/outside catering-clients','OutsideCateringClientController');
 Route::resource('/store','StoreController');
+Route::resource('/used_item','UsedItemController');
+
+
+// Route::get('/used_item', 'UsedItemController@index');
+// Route::get('/used_item/create', 'UsedItemController@create');

@@ -25,8 +25,25 @@
                     </div>
                 </div>
                 this is gona be so much awesome .kitchen staff goes in here........ from the database
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Type</th>
+                        </tr>
+                        
+                    </thead>
+                    <tbody>
+                        @foreach($stafftypes as $stafftype)
+                        <tr>
+                        <td><a href="/staff_type/{{ $stafftype->id }}"></a>{{ $stafftype->type}}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                    
+                </table>
+               
 
             </div>
-        </div>
+        </div>   
     </div>
 @endsection

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\staff;
 use Illuminate\Http\Request;
+use App\Http\Requests\StaffRequest;
 
 class StaffController extends Controller
 {
@@ -14,7 +15,9 @@ class StaffController extends Controller
      */
     public function index()
     {
-        return view('staff.index');
+        $staffs = staff::all();
+
+        return view('staff.index', compact('staffs'));
     }
 
     /**
@@ -33,9 +36,19 @@ class StaffController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StaffRequest $request)
     {
-        //
+        $staff = new staff($request->all());
+        
+        if(!$staff->save()){
+            session()->flash('message','Failed to Save');
+            return redirect()->back()->withErrors();
+
+        }
+
+        session()->flash('message','Staff saved Successfully');
+        return redirect('/staff');   
+
     }
 
     /**
@@ -44,9 +57,11 @@ class StaffController extends Controller
      * @param  \App\staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function show(staff $staff)
+    public function show($id)
     {
-        //
+      $staff = staff::find($id);
+
+      return view('staff.show', compact('staff'));  
     }
 
     /**
@@ -57,7 +72,7 @@ class StaffController extends Controller
      */
     public function edit(staff $staff)
     {
-        //
+        return view ('staff.edit', compact('staff'));
     }
 
     /**
@@ -67,9 +82,16 @@ class StaffController extends Controller
      * @param  \App\staff  $staff
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, staff $staff)
+    public function update(Request $request,$id)
     {
-        //
+        $staff = staff::find($id);
+
+        $staff -> update($request->all());
+        if($staff->save())
+        {
+            return redirect('/staff');
+        }
+        return redirect()->back();
     }
 
     /**
@@ -80,6 +102,8 @@ class StaffController extends Controller
      */
     public function destroy(staff $staff)
     {
-        //
+        $staff->delete();
+
+        return redirect('/staff');
     }
 }
