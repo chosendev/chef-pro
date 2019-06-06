@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class point_of_sale extends Model
+class order extends Model
 {
     //
     protected $fillable =
         [
+            'food_combination',
+            'price',
+            'status',
             'date',
-            'name',
-            'order_id',
-            'staff_id'
         ];
 }

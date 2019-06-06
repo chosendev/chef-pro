@@ -16,9 +16,10 @@ class CreateMenusTable extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('food_combination');
-            $table->string('name');
             $table->string('price');
+            $table->string('image')->nullable();
             $table->string('status'); //available or not available
+            $table->date('date');
             $table->timestamps();
         });
     }

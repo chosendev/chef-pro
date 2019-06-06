@@ -20,12 +20,14 @@ class DatabaseSeeder extends Seeder
     	// 	DB::table($table)->truncate();
     	// }
 
-    	
-        // $this->call(UsersTableSeeder::class);
         $this->call(StaffTableSeeder::class);
         $this->call(StaffTypeTableSeeder::class);
         $this->call(ItemsTableSeeder::class);
         $this->call(VendorsTableSeeder::class);
         $this->call(StoresTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
+        $this->call(MenuTableSeeder::class);
+        $this->call(MenuTableSeeder::class);
+
     }
 }

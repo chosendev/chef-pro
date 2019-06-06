@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\point_of_sale;
+use App\Point_of_sale;
 use Illuminate\Http\Request;
 
 class PointOfSaleController extends Controller
@@ -14,8 +14,8 @@ class PointOfSaleController extends Controller
      */
     public function index()
     {
-
-        return view('point of sale.index');
+        $point_of_sales =  Point_of_sale :: paginate(6);
+        return view('point of sales.index',compact('point_of_sales'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PointOfSaleController extends Controller
      */
     public function create()
     {
-        return view('point of sale.create');
+        return view('point of sales.create');
     }
 
     /**
@@ -44,9 +44,9 @@ class PointOfSaleController extends Controller
             'date',
 
         ]);
-        $point_of_sale = new point_of_sale($request->all());
-        $point_of_sale->save();
-        return redirect('point_of_sale/create')->with('success','A point of sale has been registered');
+        $point_of_sales = new Point_of_sale($request->all());
+        $point_of_sales->save();
+        return redirect('point_of_sales/create')->with('success','A point of sale has been registered');
     }
 
     /**

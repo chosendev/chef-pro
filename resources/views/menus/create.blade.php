@@ -13,7 +13,6 @@
         <div class="panel-body">
             <div class="col-md-12">
                 <!--notification alert -->
-                <div class="container">
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -29,7 +28,7 @@
                             {{ session()->get('success') }}
                         </div><br/>
                     @endif
-                </div><!-- End of notification alert -->
+                <!-- End of notification alert -->
 
                 <div class="row">
                     <div class="col-sm-12 text-right">
@@ -41,37 +40,45 @@
                     </div>
                 </div>
                 <br>
-                <form action="#" method="post" enctype="multipart/form-data"><!-- form begins here -->
+                <form action="{{route('menus.store')}}" method="POST" enctype="multipart/form-data"><!-- form begins
+                here
+                 -->
                     @csrf
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group has-success">
-                                <label>food-combination</label>
-                                <input type="text" class="form-control" placeholder="name/food-combination">
+                                <label>Food Combination</label>
+                                <input type="text" class="form-control" placeholder="name/Food combination" name="food_combination">
                             </div>
 
                             <div class="`form-group has-success">
-                                <label>price</label>
-                                <input type="text" class="form-control" placeholder="price">
+                                <label>Price</label>
+                                <input type="text" class="form-control" placeholder="price" name="price">
                             </div>
                         </div>
 
                         <div class="col-sm-6">
                             <div class="form-group has-success">
-                                <label>date</label>
-                                <input type="date" class="form-control" placeholder="date">
+                                <label>Status</label>
+                                <select name="status" class="form-control">
+                                    <option value="Available">Available</option>
+                                    <option value="Unavailable">Unavailable</option>
+                                </select>
                             </div>
 
                             <div class="`form-group has-success">
-                                <label>Status</label>
-                                <input type="text" class="form-control" placeholder="status">
+                                <label>Date</label>
+                                <input type="date" class="form-control" placeholder="date" name="date">
                             </div>
+                        </div>
+
+                        <div class="`form-group has-success">
+                            <label>image</label>
+                            <input type="file" class="py-4" placeholder="image" name="image">
                         </div>
                     </div>
                     <br>
-                    <center>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                    </center>
 
                 </form><!-- form close --->
             </div>

@@ -14,7 +14,8 @@ class ExpenseController extends Controller
      */
     public function index()
     {
-        return view('expenses.index');
+        $expenses = expense::paginate(6);
+        return view('expenses.index',compact('expenses'));
     }
 
     /**
@@ -36,6 +37,15 @@ class ExpenseController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'name'=>'required',
+            'cost'=>'required',
+            'receipt'=>'required',
+            'date'=>'required',
+        ]);
+        $expenses = new expense($request->all());
+        $expenses->save();
+        return redirect('expenses/create')->with('success','Welcome A board');
     }
 
     /**
@@ -44,10 +54,12 @@ class ExpenseController extends Controller
      * @param  \App\expense  $expense
      * @return \Illuminate\Http\Response
      */
-    public function show(expense $expense)
+    public function show($id)
     {
         //
-    }
+//        $expenses = expense::find($id);
+//        return view('expenses.show',compact('expenses'));
+ }
 
     /**
      * Show the form for editing the specified resource.
