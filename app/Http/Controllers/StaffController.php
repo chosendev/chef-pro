@@ -18,7 +18,6 @@ class StaffController extends Controller
         $staffs = staff::all();
         $staffs = Staff::paginate(6);
         return view('staffs.index',compact('staffs'));
-
     }
 
     /**

@@ -1,4 +1,5 @@
-        @extends('partials.master')
+
+@extends('partials.master')
 
 @section('header')
 
@@ -42,6 +43,7 @@
                                 </div>
                             </div>
                         </div>
+
 
                     @endforeach
 

@@ -13,7 +13,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-
     	// Model::unguard();
 
     	// foreach ($this->toTruncate as $table){
@@ -28,5 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(StoresTableSeeder::class);
         $this->call(UsersTableSeeder::class);
         $this->call(MenuTableSeeder::class);
+        $this->call(MenuTableSeeder::class);
+
     }
 }

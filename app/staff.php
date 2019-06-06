@@ -14,5 +14,8 @@ class staff extends Model
     [
     	'staff_type_id',
     ];
+<<<<<<< HEAD
 >>>>>>> forms
+=======
+>>>>>>> 881b97265093798ec71c58b087466a6a76f2233f
 }
