@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\order;
+use App\Order;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -15,6 +15,8 @@ class OrderController extends Controller
     public function index()
     {
         //
+        $orders = Order::paginate(8);
+        return view('orders.index',compact('orders'));
     }
 
     /**
@@ -25,6 +27,7 @@ class OrderController extends Controller
     public function create()
     {
         //
+        return view('orders.create');
     }
 
     /**
@@ -36,6 +39,15 @@ class OrderController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'food_combination'=>'required',
+            'price'=>'required',
+            'status'=>'required',
+            'date'=>'required',
+        ]);
+        $order = new Order($request->all());
+        $order->save();
+       return redirect('orders/create')->with('success','A new order has been Registered');
     }
 
     /**

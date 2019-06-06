@@ -4,7 +4,7 @@
 
 	@include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Items'])
 
-@endsection
+@endsection('header')
 
 @section('content')
 
@@ -39,3 +39,4 @@
 		
 	</div>	
 	@endsection
+

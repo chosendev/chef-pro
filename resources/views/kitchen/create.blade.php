@@ -2,13 +2,13 @@
 
 @section('header')
 
-    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Outside catering-clients'])
+    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Kitchen'])
 
 @endsection
 
 @section('content')
     <div class="panel panel-default">
-        <div class="panel-heading">Outside catering Clients:Add</div>
+        <div class="panel-heading">Kitchen:Add</div>
 
         <div class="panel-body">
             <div class="col-md-12">
@@ -33,7 +33,7 @@
 
                 <div class="row">
                     <div class="col-sm-12 text-right">
-                        <a href="{{route('orders.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
+                        <a href="{{route('kitchen.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
                         text-right "
                            type="button">
                             View
@@ -46,33 +46,37 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group has-success">
-                                <label>Client Name</label>
-                                <input type="text" class="form-control" placeholder="client name" name="client_name">
+                                <label>Order </label>
+                                <input type="text" class="form-control" placeholder="order"
+                                       name="order_id">
                             </div>
-                        
+                        </div>
 
+
+
+                           <div class="col-sm-6">
+                            <div class="form-group has-success">
+                                <label>Order status</label>
+                                 <select id="order_status" class="form-control">
+                                    <option value="default">select</option>
+                                    <option value="in_the_queue">In the queue</option>
+                                    <option value="ready">Ready</option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                            <div class="col-sm-6">
                             <div class="form-group has-success">
                                 <label>Date</label>
                                 <input type="date" class="form-control" placeholder="date" name="date">
                             </div>
-                        
-                           </div>
-
-                           <div class="col-sm-6">
-                            <div class="`form-group has-success">
-                                <label>Cost</label>
-                                <input type="text" class="form-control" placeholder="cost" name="cost">
                         </div>
 
-                            <div class="form-group has-success">
-                                <label>package</label>
-                                <input type="text" class="form-control" placeholder="package" name="package">
-                            </div>
-                    </div>
-                
-                     <button type="submit" class="btn btn-primary">Submit</button>
-
-                    
+                    <br>
+                    <center>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </center>
 
                 </form><!-- form close --->
             </div>

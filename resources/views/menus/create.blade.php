@@ -46,25 +46,25 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group has-success">
-                                <label>food-combination</label>
-                                <input type="text" class="form-control" placeholder="name/food-combination">
+                                <label>Food Combination</label>
+                                <input type="text" class="form-control" placeholder="name/Food combination" name="food_combination">
                             </div>
 
                             <div class="`form-group has-success">
-                                <label>price</label>
+                                <label>Price</label>
                                 <input type="text" class="form-control" placeholder="price">
                             </div>
                         </div>
 
                         <div class="col-sm-6">
                             <div class="form-group has-success">
-                                <label>date</label>
-                                <input type="date" class="form-control" placeholder="date">
+                                <label>Status</label>
+                                <input type="Status" class="form-control" placeholder="status">
                             </div>
 
                             <div class="`form-group has-success">
-                                <label>Status</label>
-                                <input type="text" class="form-control" placeholder="status">
+                                <label>Date</label>
+                                <input type="date" class="form-control" placeholder="date" name="date">
                             </div>
                         </div>
                     </div>

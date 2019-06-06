@@ -11,29 +11,28 @@
         <div class="panel-heading">Staff:Add</div>
 
         <div class="panel-body">
-            <div class="col-md-12">
+            <div class="col-sm-12">
                 <!--notification alert -->
-                <div class="container">
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div><br/>
-                    @endif
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div><br/>
+                @endif
 
-                    @if(session()->get('success'))
-                        <div class="alert alert-success">
-                            {{ session()->get('success') }}
-                        </div><br/>
-                    @endif
-                </div><!-- End of notification alert -->
+                @if(session()->get('success'))
+                    <div class="alert alert-success">
+                        {{ session()->get('success') }}
+                    </div><br/>
+            @endif
+            <!-- End of notification alert -->
 
                 <div class="row">
                     <div class="col-sm-12 text-right">
-                        <a href="{{route('staff.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
+                        <a href="{{route('staffs.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
                         text-right "
                            type="button">
                             View
@@ -41,7 +40,13 @@
                     </div>
                 </div>
                 <br>
+<<<<<<< HEAD:resources/views/staff/create.blade.php
                 <form action="/staff" method="POST" enctype="multipart/form-data"><!-- form begins here -->
+=======
+                <form action="{{route("staffs.store")}}" method="POST" enctype="multipart/form-data"><!-- form begins
+                here
+                 -->
+>>>>>>> viewing data starting:resources/views/staffs/create.blade.php
                     @csrf
                     <div class="row">
                         <div class="col-sm-6">
@@ -55,9 +60,7 @@
                                 <label>first name</label>
                                 <input type="text" class="form-control" placeholder="first name" name="first_name">
                             </div>
-                        </div>
 
-                        <div class="col-sm-6">
                             <div class="form-group has-success">
                                 <label>last name</label>
                                 <input type="text" class="form-control" placeholder="last name" name="last_name">
@@ -86,19 +89,17 @@
 
 
                         </div>
-                            <div class="col-sm-6">
+                        <div class="col-sm-6">
                             <div class="form-group has-success">
                                 <label>Next of kin Phone number</label>
                                 <input type="text" class="form-control" placeholder="next of kin phone number"
                                        name="next_of_kin_phone_number">
                             </div>
-                            </div>
+                        </div>
 
                     </div>
                     <br>
-                    <center>
                         <button type="submit" class="btn btn-primary">Submit</button>
-                    </center>
 
                 </form><!-- form close --->
             </div>

@@ -2,19 +2,20 @@
 
 @section('header')
 
-    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'staff'])
+    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Menu'])
 
 @endsection
 
 @section('content')
 
     <div class="panel panel-default">
-        <div class="panel-heading">Staff:All</div>
+        <div class="panel-heading">Menu:All</div>
         <div class="panel-body">
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-sm-12 text-right">
-                        <a href="{{route('staff.create')}}" style="height: 50px;width: 200px;" class="btn btn-success
+                        <a href="{{route('menus.create')}}" style="height: 50px;width: 200px;" class="btn
+                        btn-success
                         text-right "
                            type="button"><i
                                 class="fa

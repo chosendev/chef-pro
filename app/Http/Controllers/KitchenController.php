@@ -14,7 +14,7 @@ class KitchenController extends Controller
      */
     public function index()
     {
-        //
+        return view('kitchen.index');
     }
 
     /**
@@ -24,7 +24,7 @@ class KitchenController extends Controller
      */
     public function create()
     {
-        //
+       return view('kitchen.create');
     }
 
     /**

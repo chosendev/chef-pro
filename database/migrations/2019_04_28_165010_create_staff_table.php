@@ -15,7 +15,7 @@ class CreateStaffTable extends Migration
     {
         Schema::create('staff', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('staff_type_id');
+//            $table->unsignedInteger('staff_type_id');
             $table->string('first_name');
             $table->string('last_name');
             $table->string('phone_number');
@@ -23,8 +23,7 @@ class CreateStaffTable extends Migration
             $table->string('next_of_kin_name');
             $table->string('next_of_kin_phone_number');
             $table->timestamps();
-
-            $table->foreign('staff_type_id')->references('id')->on('staff_types')->onUpdate('cascade')->onDelete('cascade');
+//            $table->foreign('staff_type_id')->references('id')->on('staff_types')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
