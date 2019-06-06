@@ -2,18 +2,17 @@
 
 @section('header')
 
-    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Outside catering-clients'])
+    @include('partials.breadcrumb_and_header',['breadcrumb' => 'Home Page', 'header' => 'Orders'])
 
 @endsection
 
 @section('content')
     <div class="panel panel-default">
-        <div class="panel-heading">Outside catering Clients:Add</div>
+        <div class="panel-heading">Orders:Add</div>
 
         <div class="panel-body">
             <div class="col-md-12">
                 <!--notification alert -->
-                <div class="container">
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -29,7 +28,7 @@
                             {{ session()->get('success') }}
                         </div><br/>
                     @endif
-                </div><!-- End of notification alert -->
+                <!-- End of notification alert -->
 
                 <div class="row">
                     <div class="col-sm-12 text-right">
@@ -41,42 +40,41 @@
                     </div>
                 </div>
                 <br>
-                <form action="#" method="post" enctype="multipart/form-data"><!-- form begins here -->
+                <form action="{{route('orders.store')}}" method="POST" enctype="multipart/form-data"><!-- form begins
+                here -->
                     @csrf
+
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group has-success">
-                                <label>Client Name</label>
-                                <input type="text" class="form-control" placeholder="client name" name="client_name">
+                                <label>Date </label>
+                                <input type="date" class="form-control" placeholder="date"
+                                       name="date">
+                            </div>
+
+
+                            <div class="form-group has-success">
+                                <label>Food Combination</label>
+                                <input type="text" class="form-control" placeholder="food combination"
+                                       name="food_combination">
                             </div>
                         </div>
 
                         <div class="col-sm-6">
-                            <div class="`form-group has-success">
-                                <label>date</label>
-                                <input type="date" class="form-control" placeholder="date" name="date">
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12">
-                            <div class="`form-group has-success">
-                                <label>Cost</label>
-                                <input type="text" class="form-control" placeholder="cost" name="cost">
-                            </div>
-                        </div>
-
-                        <div class="col-sm-12">
                             <div class="form-group has-success">
-                                <label>package</label>
-                                <input type="text" class="form-control" placeholder="package" name="package">
+                                <label>Price</label>
+                                <input type="text" class="form-control" placeholder="Price" name="price">
+                            </div>
+
+                            <div class="form-group has-success">
+                                <label>Status</label>
+                                <input type="text" class="form-control" placeholder="status" name="status">
+
                             </div>
                         </div>
 
                     </div>
-                    <br>
-                    <center>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </center>
+                    <button type="submit" class="btn btn-primary">Submit</button>
 
                 </form><!-- form close --->
             </div>

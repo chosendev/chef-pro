@@ -10,7 +10,6 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">Expenses:All</div>
-        <div class="panel-body">
             <div class="col-md-12">
                 <div class="row">
                     <div class="col-sm-12 text-right">
@@ -24,9 +23,24 @@
                         </a>
                     </div>
                 </div>
-                this is gona be so much awesome .kitchen staff goes in here........ from the database
+                <div class="row">
+                    @foreach($expenses as $expense)
 
+                    <div class="col-sm-4">
+                    <div class="panel panel-success">
+                              <div class="panel panel-teal"><h3><b>Cost:</b>{{$expense->cost}}</h3></div>
+                        <div class="panel-body">
+                            <h4><b>Name:</b>{{$expense->name}}</h4>
+                            <h4><b>Receipt:</b>{{$expense->receipt}}</h4>
+                            <h4><b>Date:</b>{{$expense->date}}</h4>
+
+
+                        </div>
+                    </div>
+                </div>
+                     @endforeach
+                </div>
             </div>
-        </div>
+
     </div>
 @endsection

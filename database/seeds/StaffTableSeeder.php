@@ -11,6 +11,7 @@ class StaffTableSeeder extends Seeder
      */
     public function run()
     {
-        factory('App\staff',50)->create();
+
+        factory(\App\staff::class,30)->create();
     }
 }

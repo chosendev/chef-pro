@@ -13,7 +13,6 @@
         <div class="panel-body">
             <div class="col-md-12">
                 <!--notification alert -->
-                <div class="container">
                     @if ($errors->any())
                         <div class="alert alert-danger">
                             <ul>
@@ -29,11 +28,11 @@
                             {{ session()->get('success') }}
                         </div><br/>
                     @endif
-                </div><!-- End of notification alert -->
+                <!-- End of notification alert -->
 
                 <div class="row">
                     <div class="col-sm-12 text-right">
-                        <a href="{{route('vendor.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
+                        <a href="{{route('expenses.index')}}" style="height: 50px;width: 200px;" class="btn btn-info
                         text-right "
                            type="button">
                             View
@@ -41,7 +40,7 @@
                     </div>
                 </div>
                 <br>
-                <form action="#" method="post" enctype="multipart/form-data"><!-- form begins here -->
+                <form action="{{route('expenses.store')}}" method="post" enctype="multipart/form-data"><!-- form begins here -->
                     @csrf
                     <div class="row">
                         <div class="form-group has-success">

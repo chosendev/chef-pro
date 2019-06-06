@@ -16,6 +16,8 @@ class CreateOutsideCateringClientsTable extends Migration
         Schema::create('outside_catering_clients', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('client_name');
+            $table->string('cost');
+            $table->Integer('package_id');
             $table->string('address');
             $table->date('date');
             $table->timestamps();
