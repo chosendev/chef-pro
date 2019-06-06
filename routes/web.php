@@ -12,12 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('home');
-
-//Route::get('/', function () {
-//    return view('orders.index');
-//});
-
+    return view('partials.master');
+});
 Route::resource('/dashboard', 'DashboardController');
 Route::resource('/items', 'ItemController');
 Route::resource('/kitchen','KitchenController');

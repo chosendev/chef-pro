@@ -1,4 +1,4 @@
-@extends('partials.master')
+        @extends('partials.master')
 
 @section('header')
 
@@ -25,34 +25,7 @@
                     </div>
                 </div>
                 this is gona be so much awesome .kitchen staff goes in here........ from the database
-                 <table class="table">
-                <thead class="thead-dark">
-            <tr>
-                <th scope="col">Staff Type Id</th>
-                <th scope="col">First Name</th>
-                <th scope="col">Last Name</th>
-                <th scope="col">Address</th>
-                <th scope="col">Phone Number</th>
-                <th scope="col">NOK Names</th>
-                <th scope="col">NOK Phone Number</th>
-                
-            </tr>
-                </thead>
-                <tbody>
-                    @foreach($staffs as $staff)
-                    <tr>
-                        <td><a href="/staff/{{ $staff->id }}">{{ $staff->staff_type_id }}</a></td>
-                        <td>{{ $staff->first_name }}</td>
-                        <td>{{ $staff->last_name }}</td>
-                        <td>{{ $staff->address }}</td>
-                        <td>{{ $staff->phone_number }}</td>
-                        <td>{{ $staff->next_of_kin_name }}</td>
-                        <td>{{ $staff->next_of_kin_phone_number }}</td>
-                    </tr>
-                    @endforeach
-
-            </tbody>
-        </table>
+        
 
             </div>
         </div>
