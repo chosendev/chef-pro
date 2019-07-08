@@ -15,9 +15,7 @@ class StaffController extends Controller
      */
     public function index()
     {
-        dd('kkk');
         $staffs = staff::all();
-        dd($staffs);
 
         return view('staff.index', compact('staffs'));
     }

@@ -66,7 +66,7 @@ class UsedItemController extends Controller
      * @param  \App\used_item  $used_item
      * @return \Illuminate\Http\Response
      */
-    public function edit(used_item $used_item)
+    public function edit(UsedItem $used_item)
     {
         return view('useditems.edit', compact('used_item'));
     }
@@ -96,7 +96,7 @@ class UsedItemController extends Controller
      * @param  \App\used_item  $used_item
      * @return \Illuminate\Http\Response
      */
-    public function destroy(used_item $used_item)
+    public function destroy(UsedItem $used_item)
     {
         $used_item->delete();
 

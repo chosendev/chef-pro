@@ -1,4 +1,4 @@
-used@extends('partials.master')
+@extends('partials.master')
 
 @section('header')
 
